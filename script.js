@@ -51,11 +51,15 @@
                     let abilities = defineAbilities(pkmn);
                     defineBackground(pkmn);
 
-                    let artwork = "front_default";
+                    let artwork = "";
                     if (isShiny) {
                         artwork = "front_shiny";
                         sparkles.style.display = "block";
                         pkmnImage.classList.add("shiny");
+                    } else {
+                        artwork = "front_default";
+                        sparkles.style.display = "none";
+                        pkmnImage.classList.remove("shiny");
                     }
 
                     pkmnImage.src =
@@ -130,6 +134,7 @@
 
         function randomize(){
             pkmnId = Math.floor(Math.random() * 1028) + 1;
+            isShiny = Math.random() < 0.1;
             fetchPokemon();
         }
 
