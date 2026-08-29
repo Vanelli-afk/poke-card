@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: #f29f9d;
+    background: linear-gradient(
+        90deg,
+        rgb(238, 203, 202) 0%,
+        rgba(232, 232, 232, 0.86) 50%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    font-family: 'Poppins', sans-serif;
+}
+
+.card-container {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto;
+    perspective: 1000px;
+}
+
+
+.card,
+.back-card {
+    width: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transition: transform 0.9s ease;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    transform: rotateY(0deg);
+}
+
+.back-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: white;
+    transform: rotateY(180deg);
+}
+
+
+.card-container.flipped .card {
+    transform: rotateY(-360deg);
+}
+
+
+.card-container.flipped .back-card {
+    transform: rotateY(-180deg);
+}
+
+
+.card img {
+    height: 400px;
+    width: auto;
+}
+
+
+.info h1 {
+    text-transform: capitalize;
+}
+
+
+.info p {
+    text-transform: capitalize;
+}
+
+
+#pokemon-type {
+    font-style: italic;
+}
+
+
+.pokemon-image.shiny {
+    animation: shinyGlow 2s ease-in-out infinite;
+}
+
+
+@keyframes shinyGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 0px white);
+    }
+    50% {
+        filter: drop-shadow(0 0 15px white);
+    }
+}
+
+
+.shiny-sparkles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    display: none;
+}
+
+
+.shiny-sparkles span {
+    position: absolute;
+    font-size: 25px;
+    opacity: 0;
+    animation: sparkle 1.5s infinite ease-in-out;
+}
+
+
+.shiny-sparkles span:nth-child(1) {
+    top: 15%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+
+.shiny-sparkles span:nth-child(2) {
+    top: 30%;
+    right: 15%;
+    animation-delay: 0.4s;
+}
+
+
+.shiny-sparkles span:nth-child(3) {
+    bottom: 30%;
+    left: 10%;
+    animation-delay: 0.8s;
+}
+
+
+.shiny-sparkles span:nth-child(4) {
+    bottom: 15%;
+    right: 20%;
+    animation-delay: 1.1s;
+}
+
+
+.shiny-sparkles span:nth-child(5) {
+    top: 10%;
+    left: 50%;
+    animation-delay: 1.3s;
+
+}
+
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.3) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2) rotate(45deg);
+    }
+}
