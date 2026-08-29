@@ -1,4 +1,4 @@
-# PokéCard
+# PokeCard
 A simple personal project built to practice **HTML, CSS, and JavaScript** using the [PokéAPI](https://pokeapi.co/).
 
 ## Project Concept
