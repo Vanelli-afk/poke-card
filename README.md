@@ -1,6 +1,8 @@
 # PokeCard
 A simple personal project built to practice **HTML, CSS, and JavaScript** using the [PokeAPI](https://pokeapi.co/).
 
+[Try it out here!](https://vanelli-afk.github.io/poke-card/)
+
 ## Project Concept
 An interactive Pokémon card that randomly generates a Pokemon and displays its:
 * Type
